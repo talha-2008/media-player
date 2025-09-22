@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player by talha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="player-container">
+        <video id="video-player" class="video-display"></video>
+
+        <div class="controls-overlay">
+            <div class="top-controls">
+                <div class="back-btn">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </div>
+                <div class="file-info">
+                    <span id="file-name">Select a video file</span>
+                </div>
+                <div class="top-icons">
+                    <button id="mute-btn" class="icon-btn" title="Mute / Unmute"><span class="material-symbols-outlined">headphones</span></button>
+                    <button id="loop-btn" class="icon-btn" title="Toggle loop"><span class="material-symbols-outlined">loop</span></button>
+                    <button id="shuffle-btn" class="icon-btn" title="Shuffle (placeholder)"><span class="material-symbols-outlined">shuffle</span></button>
+                </div>
+            </div>
+
+            <div class="central-controls">
+                <button id="rewind-btn" class="control-btn"><span class="material-symbols-outlined">replay_10</span></button>
+                <button id="play-pause-btn" class="control-btn main-control"><span id="play-pause-icon" class="material-symbols-outlined">play_arrow</span></button>
+                <button id="forward-btn" class="control-btn"><span class="material-symbols-outlined">forward_10</span></button>
+            </div>
+
+            <div class="bottom-controls">
+                <div class="progress-bar-container">
+                    <input type="range" id="progress-bar" class="progress-bar" value="0" step="0.01">
+                </div>
+                <div class="time-and-volume">
+                    <span id="time-display" class="time-display">00:00 / 00:00</span>
+                    <div class="volume-container">
+                        <span class="material-symbols-outlined volume-icon" id="volume-icon">volume_up</span>
+                        <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="1">
+                    </div>
+                </div>
+                <div class="bottom-buttons">
+                    <label for="file-input" class="control-btn file-label">
+                        <span class="material-symbols-outlined">folder</span>
+                    </label>
+                    <input type="file" id="file-input" accept="video/*" hidden>
+                    
+                    <div class="speed-container">
+                        <button id="speed-btn" class="control-btn"><span class="material-symbols-outlined">speed</span></button>
+                        <div id="speed-menu" class="speed-menu drawer">
+                            <button class="speed-option" data-speed="0.5">0.5x</button>
+                            <button class="speed-option" data-speed="1">1x</button>
+                            <button class="speed-option" data-speed="1.5">1.5x</button>
+                            <button class="speed-option" data-speed="2">2x</button>
+                        </div>
+                    </div>
+                    <button id="rotation-btn" class="control-btn"><span id="rotation-icon" class="material-symbols-outlined">screen_rotation</span></button>
+                    <button id="fullscreen-btn" class="control-btn"><span id="fullscreen-icon" class="material-symbols-outlined">fullscreen</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
